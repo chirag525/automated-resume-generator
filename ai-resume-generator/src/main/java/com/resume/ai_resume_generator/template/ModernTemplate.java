@@ -27,12 +27,12 @@ public class ModernTemplate implements ResumeTemplateStrategy {
 
             PdfContentByte canvas = writer.getDirectContent();
 
-            // ================= LEFT SIDEBAR BACKGROUND =================
+            //  LEFT SIDEBAR BACKGROUND 
             canvas.setColorFill(new Color(21, 94, 117));
             canvas.rectangle(0, 0, 180, PageSize.A4.getHeight());
             canvas.fill();
 
-            // ================= FONTS =================
+            //FONTS 
             Font whiteTitle = new Font(Font.HELVETICA, 16, Font.BOLD, Color.WHITE);
             Font whiteText = new Font(Font.HELVETICA, 10, Font.NORMAL, Color.WHITE);
 
@@ -40,7 +40,7 @@ public class ModernTemplate implements ResumeTemplateStrategy {
             Font sectionFont = new Font(Font.HELVETICA, 13, Font.BOLD);
             Font normalFont = new Font(Font.HELVETICA, 11);
 
-            // ================= LEFT COLUMN CONTENT =================
+            //  LEFT COLUMN CONTENT 
             float leftX = 20;
             float leftY = PageSize.A4.getHeight() - 50;
 
@@ -71,7 +71,7 @@ public class ModernTemplate implements ResumeTemplateStrategy {
 
             leftColumn.go();
 
-            // ================= RIGHT CONTENT =================
+            //  RIGHT CONTENT 
             float rightStartX = 200;
 
             // Name
@@ -139,7 +139,7 @@ public class ModernTemplate implements ResumeTemplateStrategy {
                 });
             }
 
-            // ================= INTERNSHIPS =================
+            // INTERNSHIPS 
             if (request.getInternships() != null &&
                     !request.getInternships().isEmpty()) {
 
