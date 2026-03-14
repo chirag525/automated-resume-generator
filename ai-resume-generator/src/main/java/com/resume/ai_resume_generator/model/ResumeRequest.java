@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ResumeRequest {
 
-    // ================= PROFILE PHOTO =================
+    //  PROFILE PHOTO 
     private String profilePhotoBase64;
 
     public String getProfilePhotoBase64() {
@@ -18,49 +18,49 @@ public class ResumeRequest {
         this.profilePhotoBase64 = profilePhotoBase64;
     }
 
-    // ================= PERSONAL INFO =================
+    //PERSONAL INFO 
     @NotNull(message = "Personal information is required")
     @Valid
     private PersonalInfo personalInfo;
 
-    // ================= AI GENERATED SUMMARY =================
+    // AI GENERATED SUMMARY 
     private String professionalSummary;
 
-    // ================= TECHNICAL SKILLS =================
+    //  TECHNICAL SKILLS
     @Valid
     private TechnicalSkills technicalSkills;
 
-    // ================= SOFT SKILLS =================
+    //  SOFT SKILLS 
     private List<String> softSkills;
 
-    // ================= PROJECTS =================
+    // PROJECTS
     @Valid
     private List<Project> projects;
 
-    // ================= EDUCATION =================
+    // EDUCATION
     @Valid
     private List<Education> education;
 
-    // ================= CERTIFICATIONS =================
+    // CERTIFICATIONS
     @Valid
     private List<Certification> certifications;
 
-    // ================= INTERNSHIPS =================
+    //  INTERNSHIPS
     @Valid
     private List<Internship> internships;
 
-    // ================= RESPONSIBILITIES =================
+    //  RESPONSIBILITIES 
     @Valid
     private List<Responsibility> responsibilities;
 
-    // ================= TEMPLATE TYPE =================
+    //  TEMPLATE TYPE
     @NotNull(message = "Template type must be selected")
     private ResumeTemplate templateType;
 
 
-    // ==========================================================
-    // ===================== GETTERS & SETTERS ==================
-    // ==========================================================
+   
+    // GETTERS & SETTERS
+   
 
     public PersonalInfo getPersonalInfo() {
         return personalInfo;
@@ -118,7 +118,7 @@ public class ResumeRequest {
         this.certifications = certifications;
     }
 
-    // ✅ MISSING METHODS ADDED
+   
     public List<Internship> getInternships() {
         return internships;
     }
