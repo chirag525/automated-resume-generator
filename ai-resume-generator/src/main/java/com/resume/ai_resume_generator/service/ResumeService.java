@@ -23,7 +23,7 @@ public class ResumeService {
     public byte[] createResume(ResumeRequest request,
                                MultipartFile photo) {
 
-        // 1️⃣ Generate Professional Summary
+        // Generate Professional Summary
         String summary;
         try {
             summary = aiService.generateSummary(request);
@@ -36,7 +36,7 @@ public class ResumeService {
 
         request.setProfessionalSummary(summary);
 
-        // 2️⃣ Generate Project Summaries
+        // Generate Project Summaries
         if (request.getProjects() != null) {
             for (Project project : request.getProjects()) {
 
@@ -61,7 +61,7 @@ public class ResumeService {
             }
         }
 
-        // 3️⃣ Select Template
+        //  Select Template
         String templateKey = request.getTemplateType().name();
         ResumeTemplateStrategy strategy = templateMap.get(templateKey);
 
@@ -69,7 +69,7 @@ public class ResumeService {
             throw new RuntimeException("Template not found: " + templateKey);
         }
 
-        // 4️⃣ Generate PDF
+        // Generate PDF
         byte[] pdf = strategy.generate(request, photo);
 
         if (pdf == null || pdf.length == 0) {
