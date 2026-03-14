@@ -24,13 +24,13 @@ public class ClassicTemplate implements ResumeTemplateStrategy {
             PdfWriter.getInstance(document, out);
             document.open();
 
-            // ================= FONTS =================
+            // FONTS 
             Font nameFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 22);
             Font sectionFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14);
             Font boldFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12);
             Font normalFont = FontFactory.getFont(FontFactory.HELVETICA, 11);
 
-            // ================= PROFILE PHOTO =================
+            //  PROFILE PHOTO
             if (request.getProfilePhotoBase64() != null &&
                     !request.getProfilePhotoBase64().isBlank()) {
 
@@ -45,7 +45,7 @@ public class ClassicTemplate implements ResumeTemplateStrategy {
                 }
             }
 
-            // ================= NAME + CONTACT =================
+            //  NAME + CONTACT 
             if (request.getPersonalInfo() != null) {
 
                 Paragraph name = new Paragraph(
@@ -65,7 +65,7 @@ public class ClassicTemplate implements ResumeTemplateStrategy {
                 document.add(contact);
             }
 
-            // ================= SUMMARY =================
+            //  SUMMARY 
             if (request.getProfessionalSummary() != null &&
                     !request.getProfessionalSummary().isBlank()) {
 
@@ -77,7 +77,7 @@ public class ClassicTemplate implements ResumeTemplateStrategy {
                 document.add(summary);
             }
 
-            // ================= TECHNICAL SKILLS =================
+            //  TECHNICAL SKILLS 
             if (request.getTechnicalSkills() != null) {
 
                 addSectionTitle(document, "TECHNICAL SKILLS", sectionFont);
@@ -112,7 +112,7 @@ public class ClassicTemplate implements ResumeTemplateStrategy {
                 document.add(Chunk.NEWLINE);
             }
 
-            // ================= PROJECTS =================
+            //  PROJECTS 
             if (request.getProjects() != null && !request.getProjects().isEmpty()) {
 
                 addSectionTitle(document, "PROJECTS", sectionFont);
@@ -131,7 +131,7 @@ public class ClassicTemplate implements ResumeTemplateStrategy {
                 }
             }
 
-            // ================= INTERNSHIPS =================
+            //INTERNSHIPS
             if (request.getInternships() != null && !request.getInternships().isEmpty()) {
 
                 addSectionTitle(document, "INTERNSHIPS", sectionFont);
@@ -156,7 +156,7 @@ public class ClassicTemplate implements ResumeTemplateStrategy {
                 }
             }
 
-            // ================= EDUCATION =================
+            // EDUCATION 
             if (request.getEducation() != null && !request.getEducation().isEmpty()) {
 
                 addSectionTitle(document, "EDUCATION", sectionFont);
@@ -185,7 +185,7 @@ public class ClassicTemplate implements ResumeTemplateStrategy {
         }
     }
 
-    // ================= HELPER =================
+    //HELPER
     private void addSectionTitle(Document document, String title, Font font)
             throws DocumentException {
 
